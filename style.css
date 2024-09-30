@@ -1,0 +1,204 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    overflow: hidden;
+    color: white;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('file:///C:/Users/dell/Downloads/DALL%C2%B7E%202024-09-30%2021.04.12%20-%20A%20futuristic%203D%20animated%20background%20featuring%20sleek,%20geometric%20shapes%20floating%20in%20a%20neon-lit%20environment.%20The%20color%20palette%20includes%20deep%20shades%20of%20bl.webp') no-repeat center center/cover;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ensure the container stays above the background */
+.login-container {
+    z-index: 2;
+}
+
+
+/* Futuristic Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.login-box {
+    background: rgba(17, 17, 52, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.5);
+    width: 350px;
+    text-align: center;
+    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.login-box:hover {
+    transform: perspective(800px) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0 0 60px rgba(0, 255, 255, 1), 0 0 100px rgba(0, 255, 255, 0.7);
+}
+
+/* Title Styling */
+.login-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #09d3d3;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ec0ccf;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #38ef7d;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -25px;
+    font-size: 14px;
+    color: #0ac4fd;
+}
+
+/* Button Styling */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #38ef7d, #00f260);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px #38ef7d, 0 0 30px #00f260;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transform: perspective(500px) translateZ(0);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    box-shadow: 0 0 40px #00c9ff, 0 0 50px #92fe9d;
+    transform: perspective(500px) translateZ(10px);
+}
+
+/* Signup text */
+.signup-text {
+    margin-top: 20px;
+    color: #38ef7d;
+}
+
+.signup-text a {
+    color: #00f260;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Futuristic Glowing Circles */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+    animation: move 10s ease-in-out infinite;
+}
+
+.circle.circle1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+.circle.circle2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+.circle.circle3 {
+    width: 150px;
+    height: 150px;
+    top: 200px;
+    right: 100px;
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(50px) translateX(50px);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .circle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-title {
+        font-size: 24px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        font-size: 18px;
+    }
+}
